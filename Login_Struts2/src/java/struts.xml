@@ -1,0 +1,103 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="example.xml"/>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="Login" class="app.LoginAciton">
+            <result name ="success">/home.jsp</result>
+            <result name ="failed">/Erorr.jsp</result>
+            
+        </action>
+        <action name="view" class="app.CourseAction" method="viewAction">
+            <result name ="success">/View.jsp</result>
+          
+            
+        </action>
+        <action name="addnew" class="app.CourseAction" method="addAction">
+            <result name="success">/addTrainee.jsp</result>
+          
+            <result name="failed" >Erorr.jsp</result>
+            
+        </action>
+        <action name="delete" class="app.CourseAction" method="deleteAciton">
+            <result name="success" type="redirectAction">view</result>
+            <result name="failed" >Erorr.jsp</result>
+        </action>
+        <action name="edit" class="app.editAction">
+            <result name="success" >editCourse.jsp</result>
+        </action>
+        <action name="upDate" class="app.CourseAction" method="upDateAction" >
+            <result name="success" type="redirectAction">view</result>
+            <result name="failed" >Erorr.jsp</result>
+        </action>
+        <action name="searchCourse" class="app.MidCourseAction" method="searchAction">
+            <result name="success">viewSearch.jsp</result>
+        </action>
+        
+        
+        
+        
+        <action name="addMidTrainee" class="app.MidCourseAction" method="addMidCourse">
+            <result name="success" type="redirectAction">ViewMidCourse</result>
+        </action>
+        <action name="ViewMidCourse" class="app.MidCourseAction" method="viewMidCourseAction">
+            <result name ="success">/addTrainee.jsp</result>
+        </action>
+        
+        <action name="searchMidCourse" class="app.MidCourseAction" method="viewSearchMidCourseAction">
+            <result name ="success">/ViewSearchMidCourse.jsp</result>
+        </action>
+        
+        
+        
+        
+        
+        
+         <action name="addMidTopic" class="app.MidTopicAction" method="addMidTopic">
+            <result name="success" type="redirectAction">ViewMidTopic</result>
+        </action>
+        <action name="ViewMidTopic" class="app.MidTopicAction" method="viewMidTopicAction">
+            <result name ="success">/ViewMidTopic.jsp</result>
+        </action>
+        
+        <action name="searchMidTopic" class="app.MidTopicAction" method="viewSearchMidTopicAction">
+            <result name ="success">/ViewSearchMidTopic.jsp</result>
+        </action>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <action name="viewc" class="app.CateAction" method="viewActionC">
+            <result name ="success">/ViewCate.jsp</result>
+        </action>
+        <action name="addnewc" class="app.CateAction" method="addActionC">
+            <result name="success" type="redirectAction">viewc</result>
+          
+            <result name="failed" >Erorr.jsp</result>
+            
+        </action>
+        <action name="deletec" class="app.CateAction" method="deleteAcitonC">
+            <result name="success" type="redirectAction">viewc</result>
+            <result name="failed" >Erorr.jsp</result>
+        </action>
+        <action name="editc" class="app.CateAction">
+            <result name="success" >editCourse.jsp</result>
+        </action>
+        <action name="upDateC" class="app.CateAction" method="viewActionC">
+            <result name="success" type="redirectAction">viewc</result>
+            <result name="failed" >Erorr.jsp</result>
+        </action>
+    </package>
+</struts>
